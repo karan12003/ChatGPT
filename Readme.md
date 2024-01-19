@@ -1,3 +1,3 @@
 Kindly hit "npm run dev" command in integrated terminals of both client and server.
 
-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
+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
