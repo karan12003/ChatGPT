@@ -29,7 +29,7 @@ const openai = new OpenAI({ apikey: apikey });
 // Port
 
 const HOST = "localhost";
-const PORT = 5000;
+const PORT = process.env.PORT || 10000;
 
 // Middlewares
 
