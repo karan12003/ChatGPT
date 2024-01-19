@@ -28,8 +28,8 @@ const openai = new OpenAI({ apikey: apikey });
 
 // Port
 
-const HOST = "localhost";
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT ;
+console.log(PORT)
 
 // Middlewares
 
@@ -51,6 +51,6 @@ app.get("/chatgpt", async (req, res) => {
 
 // Listening Server
 
-app.listen(PORT, HOST, () => {
-    console.log(`Server is working at http://${HOST}:${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Server is working at http://localhost:${PORT}`);
 });
