@@ -1,8 +1,8 @@
 import './theme.css'
 import './App.css'
-import Navbar from './components/navbar/Navbar'
-import Sidebar from './components/sidebar/Sidebar'
-import ChatBox from "./components/chatbox/ChatBox"
+import Navbar from './components/navbar/Navbar.jsx'
+import Sidebar from './components/sidebar/Sidebar.jsx'
+import ChatBox from "./components/chatbox/ChatBox.jsx"
 
 function App() {
   const handleClick = ()=>{
