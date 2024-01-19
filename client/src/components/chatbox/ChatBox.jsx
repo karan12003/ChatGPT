@@ -9,9 +9,11 @@ export default function ChatBox() {
     const [apiKey,setApiKey] = useState("")
 
     const getApiKey = async () => {
-        axios.get("http://localhost:5000/apikey")
+        axios.get(`${serverUrl}/apikey`)
              .then((res) => setApiKey(res.data.apiKey))
     }
+
+    const serverUrl = "https://chatgpt-ax2w.onrender.com";
 
     const url = "https://api.openai.com/v1/chat/completions";
 
@@ -26,13 +28,13 @@ export default function ChatBox() {
     }
 
     const getChats = () => {
-        axios.get("http://localhost:5000/chat")
+        axios.get(`${serverUrl}/chat`)
             .then((res) => setChats(res.data.chats))
             .catch(err => console.log(err))
     }
 
     const getChat = (id) => {
-        axios.get(`http://localhost:5000/chat/${id}`)
+        axios.get(`${serverUrl}/chat/${id}`)
             .then((res) => setChat(res.data.chat.messages))
             .catch(err => console.log(err));
 
@@ -59,7 +61,7 @@ export default function ChatBox() {
                 const activeChat = document.querySelector(".chats div.active")
 
                 if (activeChat) {
-                    axios.patch(`http://localhost:5000/chat/${activeChat.id}`, {
+                    axios.patch(`${serverUrl}/chat/${activeChat.id}`, {
                         "title": chat.title,
                         "messages": [
                             {
@@ -69,7 +71,7 @@ export default function ChatBox() {
                         ]
                     })
                         .then(() => {
-                            axios.patch(`http://localhost:5000/chat/${activeChat.id}`, {
+                            axios.patch(`${serverUrl}/chat/${activeChat.id}`, {
                                 "title": chat.title,
                                 "messages": [
                                     {
@@ -81,7 +83,7 @@ export default function ChatBox() {
                         })
                 }
                 else {
-                    axios.post(`http://localhost:5000/chat`, {
+                    axios.post(`${serverUrl}/chat`, {
                         "title": "New Chat",
                         "messages": [
                             {
@@ -94,7 +96,7 @@ export default function ChatBox() {
                             id = res.data.chat._id
                         })
                         .then((res) => {
-                            axios.patch(`http://localhost:5000/chat/${id}`, {
+                            axios.patch(`${serverUrl}/chat/${id}`, {
                                 "title": "New Chat",
                                 "messages": [
                                     {
@@ -128,7 +130,7 @@ export default function ChatBox() {
         const activeChat = document.querySelector(".chats div.active");
         activeChat.classList.remove("active")
 
-        axios.delete(`http://localhost:5000/chat/${activeChat.id}`)
+        axios.delete(`${serverUrl}/chat/${activeChat.id}`)
             .then((res) => setChats([...chats]))
             .then(() => setChat([]))
             .catch(err => console.log(err));
