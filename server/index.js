@@ -35,6 +35,7 @@ console.log(PORT)
 
 app.use(cors())
     .use(Express.json())
+    .use(Express.static('dist'))
     .use("/chat", chatRouter)
     .get("/apikey", getApiKey)
 
