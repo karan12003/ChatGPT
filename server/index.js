@@ -21,15 +21,9 @@ main()
     .then(() => console.log("Database connected successfully"))
     .catch((err) => console.log(err));
 
-//chatgpt
-
-const apikey = process.env.OPENAI_API_KEY;
-const openai = new OpenAI({ apikey: apikey });
-
 // Port
 
-const PORT = process.env.PORT ;
-console.log(PORT)
+const PORT = process.env.PORT
 
 // Middlewares
 
@@ -38,17 +32,6 @@ app.use(cors())
     .use(Express.static('dist'))
     .use("/chat", chatRouter)
     .get("/apikey", getApiKey)
-
-app.get("/chatgpt", async (req, res) => {
-    const completion = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            { role: "system", content: "You are a helpful assistant." },
-        ],
-    });
-
-    console.log(completion.choices[0]);
-});
 
 // Listening Server
 

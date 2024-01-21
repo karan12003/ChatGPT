@@ -9,7 +9,6 @@ function App() {
     const historyBar= document.querySelector(".historyBar");
     historyBar.style.position = historyBar.style.position==="relative"?"fixedg56":"relative";
     historyBar.style.transform = historyBar.style.transform==="translate(0)"?"translate(-100%)":"translate(0)";
-    console.log('click')
   }
 
   return (
