@@ -2,8 +2,6 @@ import Express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import chatRouter from "./routes/chat.js";
-import axios from "axios";
-import OpenAI from "openai";
 import "dotenv/config";
 import { getApiKey } from "./controllers/chat.js";
 
