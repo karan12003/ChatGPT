@@ -5,7 +5,7 @@ ExpressJS,
 NodeJS,
 MongoDB,
 Tailwind CSS,
-openAI API
+OpenAI API
 
 
 ~ First trigger a deploy via https://api.render.com/deploy/srv-cmmnnri1hbls73chajgg?key=22WhYsx6F8A & then visit https://chatgpt-7jxm.onrender.com
