@@ -1,14 +1,27 @@
-Technologies used :
+👨‍💻Tech Stack:
 
-ReactJS,
-ExpressJS,
-NodeJS,
-MongoDB,
-Tailwind CSS,
-OpenAI API
+-MERN Tailwind CSS
 
+-OpenAI API
 
-~ Hosted at https://chatgpt-7jxm.onrender.com
+✨ Key Features:
 
+-Task CRUD operations with REST APIs
 
-~ If service deactivated, then clone the github repo, install necessary modules by running "npm i" command & then run "npm run dev" command in server terminal.
+-User authentication with JWT
+
+-Password encryption with Bcrypt
+
+🚀 Get Started:
+
+-Clone the repo.
+
+-Install dependencies ("npm i" command)
+
+-Configure environment variables.
+
+-Run the server & explore ("npm run dev")
+
+Hosted at:
+
+[https://taskmate-kfuq.onrender.com](https://chatgpt-7jxm.onrender.com)https://chatgpt-7jxm.onrender.com
