@@ -24,4 +24,4 @@
 
 Hosted at:
 
-[https://taskmate-kfuq.onrender.com](https://chatgpt-7jxm.onrender.com)https://chatgpt-7jxm.onrender.com
+https://chatgpt-7jxm.onrender.com
