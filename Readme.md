@@ -8,10 +8,6 @@
 
 -Task CRUD operations with REST APIs
 
--User authentication with JWT
-
--Password encryption with Bcrypt
-
 🚀 Get Started:
 
 -Clone the repo.
