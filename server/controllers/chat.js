@@ -1,17 +1,21 @@
 import Express from "express";
 import { Chat, Message } from "../models/chat.js";
+import { v4 as uuidv4} from  'uuid'
+
+console.log(uuidv4())
+
 
 export const createChat = async (req, res, next) => {
     try {
         const chat = new Chat(req.body);
-
+        chat.id = uuidv4()
         chat.save()
             .then(() => res.status(201).json({ "message": "Success", "chat": chat }))
-            .catch((err) => res.status(404).json({ "message": "Failed to save", "error": err }))
+            .catch((err) => res.status(404).json({ "message": "Failed to save", "error": err }));
 
     }
     catch (err) {
-        res.status(404).json({ "message": "Failed", "error": err })
+        res.status(404).json({ "message": "Failed", "error": err });
     }
 }
 
@@ -27,7 +31,7 @@ export const getChat = async (req, res, next) => {
 export const getActiveChat = async (req, res, next) => {
     try {
         const id = req.params.id;
-        const chat = await Chat.findOne({ _id: id });
+        const chat = await Chat.findOne({ id: id });
         if (chat)
             return res.status(200).json({ "message": "Current Chat fetched successfully", "chat": chat })
         else
@@ -40,13 +44,13 @@ export const getActiveChat = async (req, res, next) => {
 export const updateChat = async (req, res, next) => {
     try {
         const id = req.params.id;
-        const chat = await Chat.findOne({ _id: id });
+        const chat = await Chat.findOne({ id: id });
 
         if (!chat) {
             res.status(404).json({ "message": "Chat not found", "err": err })
         }
         else {
-            const updateChat = await Chat.findOneAndUpdate({ _id: id }, { "title": chat.title, "messages": [...chat.messages, new Message(req.body.messages[0])] }, { new: true });
+            const updateChat = await Chat.findOneAndUpdate({ id: id }, { "title":req.body.title?req.body.title:chat.title,"messages": [...chat.messages, new Message(req.body.messages[0]),new Message(req.body.messages[1])] }, { new: true });
             res.status(200).json({ "message": "Current updated successfully", "chat": updateChat })
         }
 
@@ -58,11 +62,11 @@ export const updateChat = async (req, res, next) => {
 export const deleteChat = async (req, res, next) => {
     try {
         const id = req.params.id;
-        let chat = await Chat.findOne({ _id: id });
+        let chat = await Chat.findOne({id: id });
         if (!chat)
             return res.status(404).json({ "message": "Chat not found" })
         else{
-            chat = await Chat.findOneAndDelete({_id:id})
+            chat = await Chat.findOneAndDelete({id:id})
             return res.status(200).json({ "message": "Chat deleted successfully", "chat": chat })
         }
     } catch (error) {

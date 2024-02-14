@@ -8,7 +8,8 @@ export const messageSchema = new Schema({
 
 export const chatSchema = new Schema({
     title:{ type : String, required: [true,"Enter title"]},
-    messages : [messageSchema]
+    messages : [messageSchema],
+    id:{type:String}
 })
 
 export const Message = Mongoose.model("Message",messageSchema)

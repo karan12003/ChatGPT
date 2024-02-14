@@ -1,64 +1,54 @@
-*{
-    margin:0;
-    padding:0;
+@font-face {
+    font-family: 'Sohne';
+    src: url(./assets/TestSöhne-Buch.ttf);
+}
+
+:root {
+    --bg: #FFFFFF;
+    --side-bg: #000000;
+    --text: #ECECF1;
+    --text-sec: #838383;
+    --span: #999999;
+    --accent: #10A37F;
+    --a-hover: #0E9272;
+    --hover: #E5E5E5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    /* overflow: hidden; */
-    font-family:"Roboto";
+    font-family: Sohne, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scrollbar-width: none;
 }
 
-*::selection{
-    background-color: #0C1525;
+*::selection {
+    /* background-color: #0C1525; */
 }
 
-img{
-    height:100%;
-    width:100%;
+body::-webkit-scrollbar {
+    display: none;
+}
+
+img {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
-i{
-    color:#B7B8B9;
-    font-size:1.2rem;
+.side-bar:hover .side-chat,
+.side-menu:hover .side-list {
+    display: flex
 }
 
-body{
-    background-color: #0C1525;
-    color:#5C6A78
+.user:hover .user-content {
+    opacity: 1;
 }
 
-.chats div.active{
-    border:.1rem solid #3E7952; 
+.assistant:hover .assistant-content {
+    opacity: 1;
 }
 
-.chats div{
-    border:.1rem solid transparent; 
-}
-
-.user, .assistant{
-    background-color: #1A2232;
-    max-width: 70%;
-    width:fit-content;
-    word-wrap: break-word;
-    /* line-break: anywhere; */
-    padding:.8rem 1rem;
-    border-radius:1rem;
-    color:#AFB0B3;
-}
-
-.user{
-    align-self: end;
-    text-align: right;
-    margin-right:1% ;
-}
-
-.assistant{
-    align-self:start;
-    text-align: left;
-    margin-left:1% ;
-}
-
-@media screen and (max-width:992px) {
-    .user, .assistant{
-        max-width: 90%;
-    }
+.card:hover .arrow{
+    display: flex;
 }
