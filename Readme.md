@@ -20,4 +20,6 @@
 
 Hosted at:
 
-https://chatgpt-tgje.onrender.com/
+https://chatgpt-tgje.onrender.com
+
+Kindly wait for 3-40 seconds for server to get deployed
