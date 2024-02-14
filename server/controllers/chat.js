@@ -2,9 +2,6 @@ import Express from "express";
 import { Chat, Message } from "../models/chat.js";
 import { v4 as uuidv4} from  'uuid'
 
-console.log(uuidv4())
-
-
 export const createChat = async (req, res, next) => {
     try {
         const chat = new Chat(req.body);
