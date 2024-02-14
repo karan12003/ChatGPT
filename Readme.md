@@ -1,16 +1,23 @@
-Technologies used :
+👨‍💻Tech Stack:
 
-ReactJS,
-ExpressJS,
-NodeJS,
-MongoDB,
-Tailwind CSS,
-openAI API
+-MERN Tailwind CSS
 
-First trigger a deploy via https://api.render.com/deploy/srv-cmmnnri1hbls73chajgg?key=22WhYsx6F8A
+-OpenAI API
 
-& then visit https://chatgpt-7jxm.onrender.com
+✨ Key Features:
 
-If service deactivated, then clone the github repo, install necessary modules by running "npm i" command & then run "npm run dev" command in server terminal.
+-Task CRUD operations with REST APIs
 
-Dont forget to replace the environment variable : sk - 5rGJRzsCFkKjaXB4YCghT3BlbkFJyX7SVotDLj1IOIBpliYI
+🚀 Get Started:
+
+-Clone the repo.
+
+-Install dependencies ("npm i" command)
+
+-Configure environment variables.
+
+-Run the server & explore ("npm run dev")
+
+Hosted at:
+
+https://chatgpt-7jxm.onrender.com
