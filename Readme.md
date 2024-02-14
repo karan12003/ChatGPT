@@ -20,4 +20,4 @@
 
 Hosted at:
 
-https://chatgpt-7jxm.onrender.com
+https://chatgpt-tgje.onrender.com/
