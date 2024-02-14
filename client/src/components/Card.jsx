@@ -58,9 +58,9 @@ useEffect(()=>{
 
   return (
     <div onClick={handleClick} className="card hover:bg-[#ECECEC] flex w-full items-center justify-between gap-4 border-[0.05px] border-[#9ba29b77] px-4 py-3 text-sm rounded-lg cursor-pointer hover:border-[#bdbdbd]">
-      <div className="text-left">
-            <p className="font-bold text-[0.85rem]">{title}</p>
-            <p className="text-[var(--span)] text-[0.85rem] font-medium ">{body}</p>
+      <div className="text-left overflow-hidden">
+            <p className="font-bold text-[0.85rem] whitespace-nowrap">{title}</p>
+            <p className="text-[var(--span)] text-[0.85rem] font-medium  whitespace-nowrap">{body}</p>
       </div>
       <button className={`arrow px-[0.45rem] text-sm py-1 rounded-lg bg-white hidden`}><i className="fa-solid fa-arrow-up cursor-pointer"></i></button>
 

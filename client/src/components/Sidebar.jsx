@@ -23,17 +23,25 @@ function Sidebar() {
     axios.delete(`http://localhost:5000/chat/${id}`)
       .then(res => {
         navigate("/")
-        dispatch(setChats(chats.filter(chat=>chat.id!==id)))
+        dispatch(setChats(chats.filter(chat => chat.id !== id)))
       })
       .catch(err => console.log(err))
   }
 
-  const copyURL = ()=>{
+  const copyURL = () => {
     navigator.clipboard.writeText(window.location.href)
   }
 
+  const close = () => {
+    const sidebar = document.querySelector(".sidebar")
+    sidebar.classList.remove('active')
+    document.querySelector(".fa-xmark").style.display='none'
+
+  }
+
   return (
-    <div className="z-50 bg-[var(--side-bg)] text-[var(--text)] font-semibold text-sm w-[16.25rem] flex flex-col py-[12px] px-2 h-screen">
+    <div className="sidebar fixed md:relative z-50 bg-[var(--side-bg)] text-[var(--text)] font-semibold text-sm w-[16.25rem] flex flex-col py-[12px] px-2 h-screen">
+
       <div onClick={() => navigate("/")} className="flex items-center justify-between cursor-pointer hover:bg-[#202123] py-2 px-4 rounded-xl">
         <div className="flex gap-2 items-center">
           <div className="w-[1.75rem] bg-white rounded-[50%] p-[0.35rem] overflow-hidden ">
@@ -86,6 +94,8 @@ function Sidebar() {
         </div>
         <p>Karan Jot Singh</p>
       </div>
+
+      <i onClick={close} className="hidden fa-solid fa-xmark border-2 border-black px-3 py-1 absolute right-0 text-base translate-x-11 cursor-pointer translate-y-1 text-black"></i>
 
     </div>
   )

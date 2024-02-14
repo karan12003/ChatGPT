@@ -25,7 +25,7 @@ function Chat() {
     }, [id, messages])
 
     return (
-        <div className="w-full max-w-[45rem] overflow-y-auto overflow-x-hidden h-[78vh] text-left p-2 flex flex-col-reverse gap-4">
+        <div className="w-full max-w-[45rem] overflow-y-auto overflow-x-hidden h-[78vh] text-left p-4 flex flex-col-reverse gap-4">
 
             {
                 messages.map((msg, index) => (

@@ -13,12 +13,11 @@ export default function App() {
   const [input, setInput] = useState("")
   const [apiKey, setApiKey] = useState("")
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
+  const chats = useSelector(state => state.chats)
   const { id } = useParams()
 
-  const chats = useSelector(state=>state.chats)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const getChats = () => {
     axios.get('http://localhost:5000/chat')
@@ -59,10 +58,10 @@ export default function App() {
             })
             .catch(err => console.log(err))
         }
-        else{
+        else {
           axios.post(`http://localhost:5000/chat`, {
-            "title":"New Chat"
-            ,"messages": [
+            "title": "New Chat"
+            , "messages": [
               {
                 "class": "user",
                 "content": input
@@ -75,7 +74,7 @@ export default function App() {
           })
             .then(res => {
               setInput("")
-              dispatch(setChats([...chats,res.data.chat]))
+              dispatch(setChats([...chats, res.data.chat]))
               navigate(`/chat/${res.data.chat.id}`)
             })
             .catch(err => console.log(err))
@@ -94,11 +93,18 @@ export default function App() {
     getChats()
     getApiKey()
 
-    const btn = document.querySelector(".sendBtn")
-    window.addEventListener('keydown',(e)=>{
-      if (e.key==='Enter'){
-        btn.click()
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        document.querySelector(".sendBtn").click()
       }
+    })
+
+    const toggle = document.querySelector(".toggle")
+    const sidebar = document.querySelector(".sidebar")
+    
+    toggle.addEventListener("click",()=>{
+      document.querySelector(".fa-xmark").style.display='block'
+      sidebar.classList.contains('active')?sidebar.classList.remove('active'):sidebar.classList.add('active')
     })
 
   }, [setInput])
@@ -107,16 +113,16 @@ export default function App() {
     <>
       <div className="flex max-h-screen overflow-hidden">
         <Sidebar />
-        <div className="w-[calc(100vw-16.25rem)] flex flex-col">
+        <div className="w-full md:w-[calc(100vw-16.25rem)] flex flex-col">
           <Navbar />
           <div className='h-full text-center flex flex-col items-center w-full relative'>
             <Outlet />
-            <div className="fixed flex flex-col items-center w-full bottom-2">
+            <div className="fixed flex flex-col items-center w-[95%] md:w-[65%] 2xl:w-full bottom-2">
               <div className="flex items-center gap-2 border-[0.05px] border-[#9ba29b77] bg-white px-4 py-3 rounded-xl w-full max-w-[47.5rem]">
                 <textarea rows="1" className=" w-[97.5%] resize-none outline-none" type="text" onChange={e => setInput(e.target.value)} value={input} placeholder="Message ChatGPT..." />
                 <button onClick={handleClick} className={`sendBtn text-white px-[0.57rem] text-[0.95rem] py-1 rounded-lg ${input !== "" ? "bg-black" : "bg-[#e5e5e5]"}`} disabled={input !== "" ? false : true}><i className="fa-solid fa-arrow-up cursor-pointer"></i></button>
               </div>
-              <p className="text-[#676767] text-xs font-normal pt-2">ChatGPT can make mistakes. Consider checking important information.</p>
+              <p className="text-[#676767] text-[0.65rem] xs:text-xs font-normal pt-2">ChatGPT can make mistakes. Consider checking important information.</p>
             </div>
           </div>
         </div>
