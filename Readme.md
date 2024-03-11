@@ -20,6 +20,5 @@
 
 Hosted at:
 
-https://chatgpt-tgje.onrender.com
+https://chatgpt-h385p.ondigitalocean.app
 
-Kindly wait for a minute for server to get deployed
