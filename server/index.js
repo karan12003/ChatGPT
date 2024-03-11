@@ -27,7 +27,7 @@ const PORT = process.env.PORT
 
 app.use(cors())
     .use(Express.json())
-    .use(Express.static('dist'))
+    .use(Express.static(path.join(path.resolve(),'/dist')))
     .use("/chat", chatRouter)
     .get("/apikey", getApiKey)
 
