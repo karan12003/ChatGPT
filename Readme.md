@@ -20,5 +20,5 @@
 
 Hosted at:
 
-https://chatgpt-h385p.ondigitalocean.app
+https://chatgpt-ydthk.ondigitalocean.app
 
