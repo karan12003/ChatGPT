@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import chatRouter from "./routes/chat.js";
 import "dotenv/config";
 import { getApiKey } from "./controllers/chat.js";
+import path from 'path';
 
 // Creating server
 
