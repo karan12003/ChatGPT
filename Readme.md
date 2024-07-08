@@ -20,5 +20,5 @@
 
 Hosted at:
 
-https://chatgpt-ydthk.ondigitalocean.app
+https://chatgpt-tgje.onrender.com
 
