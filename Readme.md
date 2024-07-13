@@ -21,4 +21,4 @@
 Hosted at:
 
 https://chatgpt-tgje.onrender.com
-
+(Kindly wait a minute for server to get deployed )
